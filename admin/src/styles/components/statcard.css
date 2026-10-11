@@ -1,0 +1,446 @@
+/* =========================================================
+   Ghar Sansar Mart - Admin Stat Card
+   ========================================================= */
+
+.stat-card {
+  --stat-primary: #4f46e5;
+  --stat-primary-light: #eef2ff;
+  --stat-text: #111827;
+  --stat-muted: #6b7280;
+  --stat-border: #e5e7eb;
+  --stat-bg: #ffffff;
+  --stat-success: #059669;
+  --stat-success-bg: #ecfdf5;
+  --stat-danger: #dc2626;
+  --stat-danger-bg: #fef2f2;
+
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  padding: 22px;
+  background: var(--stat-bg);
+  border: 1px solid var(--stat-border);
+  border-radius: 18px;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.05);
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+/* =========================================================
+   Hover
+   ========================================================= */
+
+.stat-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(79, 70, 229, 0.18);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.09);
+}
+
+/* =========================================================
+   Top Section
+   ========================================================= */
+
+.stat-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* =========================================================
+   Icon
+   ========================================================= */
+
+.stat-card-icon {
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 14px;
+
+  color: var(--stat-primary);
+  background: var(--stat-primary-light);
+
+  font-size: 23px;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+.stat-card:hover .stat-card-icon {
+  transform: scale(1.06);
+}
+
+/* =========================================================
+   Menu Button
+   ========================================================= */
+
+.stat-card-menu {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 0;
+  border-radius: 9px;
+
+  background: transparent;
+  color: #9ca3af;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease;
+}
+
+.stat-card-menu svg {
+  width: 19px;
+  height: 19px;
+}
+
+.stat-card-menu:hover {
+  color: var(--stat-primary);
+  background: #f3f4f6;
+}
+
+.stat-card-menu:focus-visible {
+  outline: 3px solid rgba(79, 70, 229, 0.18);
+  outline-offset: 2px;
+}
+
+/* =========================================================
+   Content
+   ========================================================= */
+
+.stat-card-content {
+  margin-top: 22px;
+}
+
+.stat-card-title {
+  margin: 0 0 7px;
+
+  color: var(--stat-muted);
+
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+
+  letter-spacing: 0.01em;
+}
+
+.stat-card-value {
+  margin: 0;
+
+  color: var(--stat-text);
+
+  font-size: 29px;
+  font-weight: 750;
+  line-height: 1.15;
+
+  letter-spacing: -0.025em;
+
+  word-break: break-word;
+}
+
+/* =========================================================
+   Bottom Section
+   ========================================================= */
+
+.stat-card-bottom {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+  margin-top: 18px;
+  padding-top: 15px;
+
+  border-top: 1px solid #f1f5f9;
+}
+
+/* =========================================================
+   Trend
+   ========================================================= */
+
+.stat-card-trend {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+
+  padding: 4px 8px;
+
+  border-radius: 7px;
+
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.stat-card-trend svg {
+  width: 13px;
+  height: 13px;
+  stroke-width: 2.5;
+}
+
+/* Positive */
+
+.stat-card-trend.positive {
+  color: var(--stat-success);
+  background: var(--stat-success-bg);
+}
+
+/* Negative */
+
+.stat-card-trend.negative {
+  color: var(--stat-danger);
+  background: var(--stat-danger-bg);
+}
+
+/* =========================================================
+   Subtitle
+   ========================================================= */
+
+.stat-card-subtitle {
+  color: #9ca3af;
+
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* =========================================================
+   CARD TYPES
+   ========================================================= */
+
+/* Primary */
+
+.stat-card-primary .stat-card-icon {
+  color: #4f46e5;
+  background: #eef2ff;
+}
+
+/* Success */
+
+.stat-card-success .stat-card-icon {
+  color: #059669;
+  background: #ecfdf5;
+}
+
+/* Warning */
+
+.stat-card-warning .stat-card-icon {
+  color: #d97706;
+  background: #fffbeb;
+}
+
+/* Danger */
+
+.stat-card-danger .stat-card-icon {
+  color: #dc2626;
+  background: #fef2f2;
+}
+
+/* Info */
+
+.stat-card-info .stat-card-icon {
+  color: #0284c7;
+  background: #f0f9ff;
+}
+
+/* Purple */
+
+.stat-card-purple .stat-card-icon {
+  color: #7c3aed;
+  background: #f5f3ff;
+}
+
+/* =========================================================
+   Optional Accent Line
+   ========================================================= */
+
+.stat-card::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 3px;
+
+  background: linear-gradient(
+    90deg,
+    #4f46e5,
+    #7c3aed
+  );
+
+  opacity: 0;
+
+  transition: opacity 0.25s ease;
+}
+
+.stat-card:hover::before {
+  opacity: 1;
+}
+
+.stat-card-success::before {
+  background: linear-gradient(
+    90deg,
+    #059669,
+    #10b981
+  );
+}
+
+.stat-card-warning::before {
+  background: linear-gradient(
+    90deg,
+    #d97706,
+    #f59e0b
+  );
+}
+
+.stat-card-danger::before {
+  background: linear-gradient(
+    90deg,
+    #dc2626,
+    #ef4444
+  );
+}
+
+/* =========================================================
+   Responsive - Tablet
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .stat-card {
+    padding: 19px;
+    border-radius: 16px;
+  }
+
+  .stat-card-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    font-size: 21px;
+  }
+
+  .stat-card-value {
+    font-size: 26px;
+  }
+
+  .stat-card-content {
+    margin-top: 18px;
+  }
+}
+
+/* =========================================================
+   Responsive - Mobile
+   ========================================================= */
+
+@media (max-width: 600px) {
+  .stat-card {
+    padding: 18px;
+    border-radius: 15px;
+  }
+
+  .stat-card-top {
+    gap: 10px;
+  }
+
+  .stat-card-icon {
+    width: 44px;
+    height: 44px;
+
+    border-radius: 11px;
+
+    font-size: 20px;
+  }
+
+  .stat-card-menu {
+    width: 32px;
+    height: 32px;
+  }
+
+  .stat-card-content {
+    margin-top: 17px;
+  }
+
+  .stat-card-title {
+    font-size: 12px;
+  }
+
+  .stat-card-value {
+    font-size: 24px;
+  }
+
+  .stat-card-bottom {
+    margin-top: 15px;
+    padding-top: 13px;
+  }
+}
+
+/* =========================================================
+   Very Small Screens
+   ========================================================= */
+
+@media (max-width: 380px) {
+  .stat-card {
+    padding: 16px;
+  }
+
+  .stat-card-value {
+    font-size: 22px;
+  }
+
+  .stat-card-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .stat-card-trend,
+  .stat-card-subtitle {
+    font-size: 11px;
+  }
+}
+
+/* =========================================================
+   Reduced Motion
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .stat-card,
+  .stat-card-icon,
+  .stat-card-menu,
+  .stat-card::before {
+    transition: none;
+  }
+
+  .stat-card:hover {
+    transform: none;
+  }
+
+  .stat-card:hover .stat-card-icon {
+    transform: none;
+  }
+}
